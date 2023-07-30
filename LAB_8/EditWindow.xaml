@@ -1,0 +1,40 @@
+﻿<!--РАЗМЕТКА ОКНА РЕДАКТИРОВАНИЯ-->
+    <Window x:Class="LAB_8.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAB_8"
+        mc:Ignorable="d"
+        Title="EditWindow" Height="400" Width="300">
+    <Grid x:Name="grid" >
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Content="Редактирование данных" HorizontalAlignment="Center"
+                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Label Content="Имя платежа" Grid.Row="1"/>
+        <TextBox x:Name="textBoxName" Text="{Binding Path=PaymentName}" Margin="20 10"  
+                     Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Дата платежа" Grid.Row="2"/>
+        <DatePicker x:Name="datePickerDate" SelectedDate="{Binding Path=PaymentDate}" Margin="20 10"  
+                     Grid.Row="2" Grid.Column="1"/>
+        <Label Content="Сумма" Grid.Row="3"/>
+        <TextBox x:Name="textBoxPrice" Text="{Binding Path=Price}" Margin="20 10"  
+                     Grid.Row="3" Grid.Column="1"/>
+        <Label Content="Id плательщика" Grid.Row="4"/>
+        <TextBox x:Name="textBoxPayer" Text="{Binding Path=PayerId}" Margin="20 10"  
+                     Grid.Row="4" Grid.Column="1"/>
+        <Button Content="OK" Grid.Row="5" Grid.Column="0" Margin="25 15" Click="ButtonOK_Click"/>
+        <Button Content="Cancel" Grid.Row="5" Grid.Column="1" Margin="25 15" Click="ButtonCancel_Click"/>
+    </Grid>
+</Window>
